@@ -20,6 +20,7 @@ export class TabsComponent {
 
   onChoose(side) {
   	this.chosenList = side;
+
   }
 
   getCharacters(){
@@ -29,6 +30,14 @@ export class TabsComponent {
     return this.characters.filter((character) => {
     	return character.side === this.chosenList;
     })
+  }
+
+  onSideAssigned(characterInfo){
+  	const position = this.characters.findIndex((character) => {
+  		return character.name === characterInfo.name;
+  	})
+
+  	this.characters[position].side = characterInfo.side;
   }
 
 }
