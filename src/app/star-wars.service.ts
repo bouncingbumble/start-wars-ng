@@ -38,4 +38,12 @@ export class StarWarsService {
   		this.logService.writeLog('Changed side of ' + characterInfo.name + ', new side: ' + characterInfo.side)
   	}
 
+  	addCharacter(name, side){
+  		const newCharacter = {
+  			name: name,
+  			side: side
+  		}
+  		this.characters.push(newCharacter);
+  	}
+
 }
