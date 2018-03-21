@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StarWarsService } from '../star-wars.service';
-import { }
 
 @Component({
 	selector: 'app-list',
@@ -32,6 +31,8 @@ export class ListComponent implements OnInit, OnDestroy{
             this.characters = this.starWarsService.getCharacters(this.loadedSide);
          }
       );
+
+      this.starWarsService.fetchCharacters();
    }
 
    ngOnDestroy(){
